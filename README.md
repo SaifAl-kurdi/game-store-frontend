@@ -14,15 +14,6 @@ React frontend for the Game Store technical assignment. The application connects
 - Loading, empty, and error states
 - Responsive design for desktop and mobile screens
 
-## Prerequisites
-
-Install the following tools before starting:
-
-- [Node.js](https://nodejs.org/)
-- npm, which is included with Node.js
-- Git
-- The Game Store Django backend
-
 ## Application Routes
 
 | Route | Access | Purpose |
