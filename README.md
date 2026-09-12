@@ -14,6 +14,84 @@ React frontend for the Game Store technical assignment. The application connects
 - Loading, empty, and error states
 - Responsive design for desktop and mobile screens
 
+## Related Repository
+
+The Django backend is available at:
+
+## Local Setup
+
+### 1. Clone the repository
+
+```powershell
+git clone https://github.com/SaifAl-kurdi/game-store-frontend.git
+cd game-store-frontend
+```
+
+### 2. Install dependencies
+
+```powershell
+npm install
+```
+
+### 3. Configure environment variables
+
+Create a `.env` file in the project root:
+
+```env
+API_BASE_URL=http://127.0.0.1:8000/api
+```
+
+The `.env` file is ignored by Git and must not contain committed secrets.
+
+### 4. Start the Django backend
+
+Open a terminal in the backend project and run:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+python manage.py runserver
+```
+
+The backend should be available at:
+
+```text
+http://127.0.0.1:8000
+```
+
+### 5. Start the React frontend
+
+Open another terminal in this frontend project and run:
+
+```powershell
+npm start
+```
+
+If PowerShell cannot execute `npm`, use:
+
+```powershell
+npm.cmd start
+```
+
+Open the address printed by Parcel. By default, it is:
+
+```text
+http://localhost:1234
+```
+
+## Available Scripts
+
+### Development server
+
+```powershell
+npm start
+```
+
+### Production build
+
+```powershell
+npm run build
+```
+
 ## Application Routes
 
 | Route | Access | Purpose |
