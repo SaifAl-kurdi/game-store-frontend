@@ -14,22 +14,6 @@ React frontend for the Game Store technical assignment. The application connects
 - Loading, empty, and error states
 - Responsive design for desktop and mobile screens
 
-## Technologies
-
-- React
-- React Router
-- Axios
-- Parcel
-- HTML5 and CSS3
-- Django REST Framework backend
-- PostgreSQL database
-
-## Related Repository
-
-The Django backend is available at:
-
-[game-store-backend](https://github.com/SaifAl-kurdi/game-store-backend)
-
 ## Prerequisites
 
 Install the following tools before starting:
@@ -38,89 +22,6 @@ Install the following tools before starting:
 - npm, which is included with Node.js
 - Git
 - The Game Store Django backend
-
-Verify Node.js and npm:
-
-```powershell
-node --version
-npm --version
-```
-
-## Local Setup
-
-### 1. Clone the repository
-
-```powershell
-git clone https://github.com/SaifAl-kurdi/game-store-frontend.git
-cd game-store-frontend
-```
-
-### 2. Install dependencies
-
-```powershell
-npm install
-```
-
-### 3. Configure environment variables
-
-Create a `.env` file in the project root:
-
-```env
-API_BASE_URL=http://127.0.0.1:8000/api
-```
-
-The `.env` file is ignored by Git and must not contain committed secrets.
-
-### 4. Start the Django backend
-
-Open a terminal in the backend project and run:
-
-```powershell
-.\.venv\Scripts\Activate.ps1
-python manage.py runserver
-```
-
-The backend should be available at:
-
-```text
-http://127.0.0.1:8000
-```
-
-### 5. Start the React frontend
-
-Open another terminal in this frontend project and run:
-
-```powershell
-npm start
-```
-
-If PowerShell cannot execute `npm`, use:
-
-```powershell
-npm.cmd start
-```
-
-Open the address printed by Parcel. By default, it is:
-
-```text
-http://localhost:1234
-```
-
-## Available Scripts
-
-### Development server
-
-```powershell
-npm start
-```
-
-### Production build
-
-```powershell
-npm run build
-```
-
-The production files are generated in the `dist` directory.
 
 ## Application Routes
 
@@ -142,14 +43,6 @@ The production files are generated in the `dist` directory.
 | `POST` | `/api/orders/` | Purchase a product and create an order |
 | `GET` | `/api/orders/{receipt_number}/` | Retrieve the authenticated user's receipt |
 
-Product listing query examples:
-
-```text
-/api/products/?page=1&page_size=4
-/api/products/?location=JO
-/api/products/?location=SA
-```
-
 ## Authentication Flow
 
 1. The user enters a Django username and password on the login page.
@@ -168,59 +61,6 @@ Product listing query examples:
 5. The frontend posts the product ID to `/api/orders/`.
 6. Django saves the order in PostgreSQL and returns a receipt number.
 7. The frontend redirects to the receipt page and retrieves the saved order.
-
-## Project Structure
-
-```text
-game-store-frontend/
-|-- src/
-|   |-- api/
-|   |   `-- client.js
-|   |-- auth/
-|   |   `-- AuthContext.jsx
-|   |-- components/
-|   |   `-- ProtectedRoute.jsx
-|   |-- pages/
-|   |   |-- LoginPage.jsx
-|   |   |-- ProductDetailsPage.jsx
-|   |   |-- ProductsPage.jsx
-|   |   `-- ReceiptPage.jsx
-|   |-- App.jsx
-|   |-- index.html
-|   |-- main.jsx
-|   `-- styles.css
-|-- .env.example
-|-- .gitignore
-|-- package-lock.json
-|-- package.json
-`-- README.md
-```
-
-## Environment Example
-
-The repository should include `.env.example` with:
-
-```env
-API_BASE_URL=http://127.0.0.1:8000/api
-```
-
-Developers can copy it to `.env` and change the URL for their environment.
-
-## Troubleshooting
-
-### `node` or `npm` is not recognized
-
-Restart VS Code after installing Node.js. Confirm that the Node.js installation directory is included in the Windows `Path` environment variable.
-
-### Port 1234 is already in use
-
-Stop the other Parcel process or start the project on another port:
-
-```powershell
-npx parcel src/index.html --port 1235
-```
-
-If the cache causes outdated content to appear, stop Parcel, delete `.parcel-cache`, and start it again.
 
 ### CORS error
 
